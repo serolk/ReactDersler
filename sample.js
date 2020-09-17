@@ -7,13 +7,13 @@ function wl(a)
 
 function foo() {
 	wl("foo")
-	return true
+	return false
 }
 
 
 function bar() {
 	wl("bar")
-	return false
+	return true
 }
 
 
