@@ -5,26 +5,6 @@ function wl(a)
 ///////////////////////////////////////////////////////////////////////
 
 
-function foo() {
-	wl("foo")
-	return false
-}
+//backtick karakteri ES6 ile geldi
 
-
-function bar() {
-	wl("bar")
-	return true
-}
-
-
-function tar() {
-	wl("tar")
-	return false
-}
-
-
-wl(foo() || bar() && tar())
-wl(foo() && bar() || tar())
-
-wl(foo() | bar() & tar())
-wl(foo() & bar() | tar())
+wl(`"'ankara"'`)
