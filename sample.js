@@ -7,7 +7,7 @@ function wl(a)
 
 //backtick karakteri ES6 ile geldi
 
-// wl(`"'ankara"'`)
+//Bu küme parantezi içerisinde fonksiyon bile çağrılabilir
 
 let a = 30, b = 34
 
