@@ -11,6 +11,6 @@ function wl(a)
 
 let a = 30, b = 34
 
-let c = `Bugün hava ${a} derece, yarın ${b} derece olacak`
+let c = `Bugün hava ${a * 2} derece, yarın ${b} derece olacak`
 
 wl(c)
