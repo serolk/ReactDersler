@@ -7,4 +7,10 @@ function wl(a)
 
 //backtick karakteri ES6 ile geldi
 
-wl(`"'ankara"'`)
+// wl(`"'ankara"'`)
+
+let a = 30, b = 34
+
+let c = `Bugün hava ${a} derece, yarın ${b} derece olacak`
+
+wl(c)
