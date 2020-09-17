@@ -1,16 +1,20 @@
-function wl(a)
-{
+function wl(a) {
 	console.log(a)
 }
+
 ///////////////////////////////////////////////////////////////////////
+//virgül operatörü
+
+let a = (foo(), bar())
+
+wl(a)
+
+function foo() {
+	wl("foo")
+}
 
 
-//backtick karakteri ES6 ile geldi
-
-//Bu küme parantezi içerisinde fonksiyon bile çağrılabilir
-
-let a = 30, b = 34
-
-let c = `Bugün hava ${a * 2} derece, yarın ${b} derece olacak`
-
-wl(c)
+function bar() {
+	wl("bar")
+	return 12
+}
