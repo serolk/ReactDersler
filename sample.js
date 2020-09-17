@@ -3,14 +3,30 @@ function wl(a) {
 }
 
 ///////////////////////////////////////////////////////////////////////
-//typrof operatörü
+//sınıf çalışması
 
-let a = 10
+findRoots(1,10,25)
 
-wl(typeof(a * "20"))
-wl(typeof(a + "20"))
-wl(typeof a * "20")
-wl(typeof a * 20)
+function findRoots(a, b, c)
+{
+	let delta = b * b - 4 * a * c
 
-wl(typeof (a))
-wl(typeof(a))
+	if(delta > 0)
+	{
+		let sqrtDelta = Math.sqrt(delta)
+		let x1 = (-b + sqrtDelta) / (2 * a)
+		let x2 = (-b - sqrtDelta) / (2 * a)
+		wl(`x1 = ${x1} ve x2 = ${x2}`)
+	}
+	else if(delta === 0)
+	{
+		let x1 = -b / (2 * a)
+		let x2 = x1
+		wl(`x1 = ${x1} ve x2 = ${x2}`)
+	}
+	else
+	{
+		wl("Gerçek Kök")
+	}
+
+}
