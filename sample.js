@@ -3,18 +3,14 @@ function wl(a) {
 }
 
 ///////////////////////////////////////////////////////////////////////
-//virgül operatörü
+//typrof operatörü
 
-let a = (foo(), bar())
+let a = 10
 
-wl(a)
+wl(typeof(a * "20"))
+wl(typeof(a + "20"))
+wl(typeof a * "20")
+wl(typeof a * 20)
 
-function foo() {
-	wl("foo")
-}
-
-
-function bar() {
-	wl("bar")
-	return 12
-}
+wl(typeof (a))
+wl(typeof(a))
