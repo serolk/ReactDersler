@@ -12,10 +12,9 @@ findRoots(3.4,-3,-9.8)
 
 function findRoots(a, b, c)
 {
-	let delta = b * b - 4 * a * c
-
 	if(delta > 0)
 	{
+		let delta = b * b - 4 * a * c
 		let sqrtDelta = Math.sqrt(delta)
 		let x1 = (-b + sqrtDelta) / (2 * a)
 		let x2 = (-b - sqrtDelta) / (2 * a)
