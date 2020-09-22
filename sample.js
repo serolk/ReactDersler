@@ -3,29 +3,31 @@ function wl(a) {
 }
 
 ///////////////////////////////////////////////////////////////////////
-//
+//paremetresi ile aldığı bir sayıdan büyük en küçük fibonacii sayısını dön
 
-function getFibonacci(val)
+
+function nextFibonacci(val)
 {
 	let prev1 = 1, prev2 = 0, result = 0
 
-	if(val <= 2)
-		return val - 1
+	if(val < 0)
+		return 0
 
-	for(let i = 2; i < val; i++)
+	do
 	{
 		result = prev1 + prev2
 		prev2 = prev1
 		prev1 = result
-	}
+
+	} while(val >= result )
+
 	return result
 }
 
 function main() {
-	for (let j = 1; j < 10; j++)
-	{
-		wl(getFibonacci(j))
-	}
+
+		wl(nextFibonacci(4))
+
 }
 
 main()
