@@ -38,15 +38,17 @@ function isPrime(val)
 function getPrime(n)
 {
 	let count = 0
-	let i = 2
-	for(; count < n; ++i)
-	{
-		if(isPrime(i))
+	let val = 2
+
+	while(1) {
+		if (isPrime(val))
 			++count
 
-	}
+		if(count == n)
+			return val
 
-	return i - 1
+		++val
+	}
 }
 
 wl(getPrime(1))
