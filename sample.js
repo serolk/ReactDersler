@@ -5,23 +5,7 @@ function wl(a) {
 ///////////////////////////////////////////////////////////////////////
 //gövdesiz for
 
-function isPrime(val) {
-
-	if(val <= -1)
-		return false
-	else if(val % 2 === 0)
-		return val === 2
-
-	sqrt = parseInt(Math.sqrt(val))
-	for(let i = 3; i <= sqrt; i += 2) {
-		if(val % i === 0)
-			return false;
-	}
-	return true;
-
-}
-
-function isPrimeRecursive(val)
+function isPrime(val)
 {
 	if(val <= 1)
 		return false
@@ -47,18 +31,28 @@ function isPrimeRecursive(val)
 			return false;
 	}
 
-	// for(let i = 11; i * i <= val; i += 2) {
-	// if(num % i === 0)
-	// 	return false;
-	// }
-
 	return true;
 
 }
 
-let num = 1000003
+function getPrime(n)
+{
+	let count = 0
+	let i = 2
+	for(; count < n; ++i)
+	{
+		if(isPrime(i))
+			++count
 
-if(isPrimeRecursive(num))
-	wl("True")
-else
-	wl("False")
+	}
+
+	return i - 1
+}
+
+wl(getPrime(1))
+wl(getPrime(2))
+wl(getPrime(3))
+wl(getPrime(4))
+wl(getPrime(5))
+wl(getPrime(6))
+wl(getPrime(20))
