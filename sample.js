@@ -51,10 +51,19 @@ function getPrime(n)
 	}
 }
 
-wl(getPrime(1))
-wl(getPrime(2))
-wl(getPrime(3))
-wl(getPrime(4))
-wl(getPrime(5))
-wl(getPrime(6))
-wl(getPrime(20))
+function isArmstrong(val)
+{
+	let sum = 0
+	let temp = val
+	while(temp > 0)
+	{
+		sum += Math.pow(parseInt(temp) % 10, 3)
+		temp = parseInt(temp) / 10
+	}
+	if(sum === val)
+		wl("Armstrong")
+	else
+		wl("Not")
+}
+
+isArmstrong(153)
