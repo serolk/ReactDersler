@@ -5,46 +5,29 @@ function wl(a) {
 ///////////////////////////////////////////////////////////////////////
 //
 
-function isArmstrong(val)
+function getFibonacci(val)
 {
-	let sum = 0
-	let temp = val
-	while(temp)
+	let prev1 = 1, prev2 = 0, result = 0
+
+	if(val <= 2)
+		return val - 1
+
+	for(let i = 2; i < val; i++)
 	{
-		sum += Math.pow(parseInt(temp) % 10, 3)
-		temp = parseInt(temp) / 10
+		result = prev1 + prev2
+		prev2 = prev1
+		prev1 = result
 	}
-	if(sum === val)
-		return true
-	return false
+	return result
 }
 
-function getDigitCount(val)
-{
-	return val === 0 ? 1 : parseInt(Math.log10(Math.abs(val))) + 1
-}
-
-function getPowSum(val)
-{
-	let count = getDigitCount(val)
-	let sum = 0
-
-	while(val)
+function main() {
+	for (let j = 1; j < 10; j++)
 	{
-		sum += Math.pow(val % 10, count)
-		val = parseInt(val / 10)
+		wl(getFibonacci(j))
 	}
-	return sum
 }
 
-function isArmstrongHoca(val)
-{
-	if(val < 0)
-		return false
-	return getPowSum(val) === val
-}
+main()
 
 
-for(let i = 1; i < 1000000; i++)
-	if(isArmstrongHoca(i))
-		wl(i + " : " + isArmstrongHoca(i))
