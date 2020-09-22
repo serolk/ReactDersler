@@ -9,12 +9,12 @@ function isPrime(val) {
 
 	if(val <= -1)
 		return false
-	else if(num % 2 === 0)
-		return num === 2
+	else if(val % 2 === 0)
+		return val === 2
 
-	sqrt = Math.sqrt(num)
+	sqrt = parseInt(Math.sqrt(val))
 	for(let i = 3; i <= sqrt; i += 2) {
-		if(num % i === 0)
+		if(val % i === 0)
 			return false;
 	}
 	return true;
@@ -38,7 +38,10 @@ function isPrimeRecursive(val)
 	if(val % 7 === 0)
 		return val === 7
 
-	sqrt = Math.sqrt(num)
+	sqrt = Math.sqrt(val)
+	if(sqrt === parseInt(Math.sqrt(val)))
+		return false
+
 	for(let i = 11; i <= sqrt; i += 2) {
 		if(num % i === 0)
 			return false;
@@ -55,7 +58,7 @@ function isPrimeRecursive(val)
 
 let num = 1000003
 
-if(isPrime(num))
+if(isPrimeRecursive(num))
 	wl("True")
 else
 	wl("False")
