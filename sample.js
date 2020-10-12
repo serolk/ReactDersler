@@ -20,7 +20,19 @@ function main() {
 	// let a = new Array(10)
 
 	let arr = [1, 2, 3, 4, 5, 6, 7]
-	displayArr(getReverse(arr))
+
+	arr.myReverse = function() {
+		let halfLen = arr.length / 2
+		for(let i = 0; i < halfLen; ++i)
+		{
+			let temp = arr[i]
+			arr[i] = arr[arr.length - 1 - i]
+			arr[arr.length - 1 - i] = temp
+		}
+
+		return arr
+	}
+	displayArr(arr.myReverse())
 
 
 }
