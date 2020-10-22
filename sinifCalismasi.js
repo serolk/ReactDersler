@@ -2,53 +2,48 @@ function wl(a) {
 	console.log(a)
 }
 
+let randomNumber = (min, max) => Math.random() * (max - min) + min
+let randomInt = (min, max) => parseInt(randomNumber(min, max))
 
-function main()
-{
-	let text = "Bugün hava çok çok güzel. Bu çok güzel havada ders mi yapılır çok"
-	let subStr = "çok"
+let onesTR = ["", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"]
+let tensTR = ["", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"]
+let basamaklar = ["", "", "Yüz", "Bin", "Milyon", "Milyar", "Trilyon"]
 
-	wl(countString(text, subStr))
+function main() {
+	for (let i = 0; i < 10; i++) {
+		let val = randomInt(-999, 1000)
+		wl(`${val} -> ${numToStrTR3D(val)}`)
+
+	}
+
 }
 
 main()
 
 
-function countString2(str, inStr)
-{
-	let index = -1
-	let counter = 0
-	for(; index = str.indexOf(inStr, index + 1) != -1; ++counter)
-		;
+function numToStrTR3D(val) {
+	if (val === 0) return "sıfır"
+	let str = val > 0 ? "" : "eksi"
 
-	return counter
-}
+	val = Math.abs(val)
 
-function countString(str, inStr)
-{
-	let index = -1
-	let counter = 0
-	while((index = str.indexOf(inStr, index + 1)) != -1)
-	{
-		counter++
+	let a = parseInt(val / 100)
+	let b = parseInt(val / 10) % 10
+	let c = val % 10
+
+	if (a !== 0) {
+		if (a !== 1)
+			str += onesTR[a]
+		str += "yüz"
 	}
 
-	return counter
-}
+	if (b !== 0)
+		str += tensTR[b]
+
+	if (c !== 0)
+		str += onesTR[c]
+
+	return str
 
 
-function a()
-{
-	{
-		var b = 10
-	}
-	wl(b)
-}
-
-function b()
-{
-	{
-		let c = 10
-	}
-	wl(c)
 }
