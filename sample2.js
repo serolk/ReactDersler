@@ -5,7 +5,7 @@ function wl(str){
 }
 ////////////////////////////////////////
 function main(){
-
+rande
 	let numbers = [-1, 7, -3, 4, 6]
 
 	///SLICE//////
